@@ -3,3 +3,4 @@ export const USER_LOGGED_IN = "USER_LOGGED_IN";
 export const USER_LOGGING_FALED = "USER_LOGGING_FALED";
 export const USER_LOGGING_OUT = "USER_LOGGING_OUT";
 export const USER_LOGGED_OUT = "USER_LOGGED_OUT";
+export const LOCALE_SET = "LOCALE_SET";

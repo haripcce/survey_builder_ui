@@ -8,25 +8,37 @@ import ForgotPasswordPage from './components/pages/ForgotPasswordPage';
 import GuestRoute from './routes/GuestRoute';
 import UserRoute from './routes/UserRoute';
 import PropTypes from "prop-types";
+import { IntlProvider } from "react-intl";
+import { connect } from "react-redux";
+import messages from "./messages";
 
 class App extends React.Component {
 	
 render(){
-	const { location } = this.props;
-return (<div class="container">
+	const { location, lang } = this.props;
+return (
+<IntlProvider locale={lang} messages={messages[lang]}>
+<div class="container">
 		<GuestRoute path="/" location={location} exact component={HomePage} />
 		<GuestRoute path="/login" location={location} exact component={LoginPage} />
 		<GuestRoute path="/signup" location={location} exact component={SignUpPage} />
 		<GuestRoute path="/forgotpassword" location={location} exact component={ForgotPasswordPage} />
 		<UserRoute path="/dashboard" location={location} exact component={DashboardPage} />
-	</div>);
+	</div>
+	</IntlProvider>
+	);
 }
 }
 
 App.propTypes = {
 	location: PropTypes.shape({
 	  pathname: PropTypes.string.isRequired
-	}).isRequired
+	}).isRequired,
+	lang: PropTypes.string.isRequired
   };
-  
-export default App;
+  function mapStateToProps(state) {
+	return {
+	  lang: state.locale.lang
+	};
+  }
+  export default connect(mapStateToProps, {  })(App);
