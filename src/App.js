@@ -18,7 +18,7 @@ render(){
 	const { location, lang } = this.props;
 return (
 <IntlProvider locale={lang} messages={messages[lang]}>
-<div class="container">
+<div class="container-fluid">
 		<GuestRoute path="/" location={location} exact component={HomePage} />
 		<GuestRoute path="/login" location={location} exact component={LoginPage} />
 		<GuestRoute path="/signup" location={location} exact component={SignUpPage} />

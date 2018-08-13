@@ -5,12 +5,14 @@ const LoginHeaderForm = () => {
     return (
     
     <div class="row">
-        <div class="col-8">
-        <h1>Survey Builder</h1>
+    <div class="col-md-12">
+        <div class="col-lg-8 col-sm-12 col-md-12">
+            <h1 class="text-center">Survey Builder</h1>
         </div>
-        <div class="col-4">
-        <Link to="/signup">New User? Sign Up</Link>
+        <div class="col-lg-4 col-sm-12 col-md-12 text-right standard-padding">
+            <Link to="/signup">New User? Sign Up</Link>
         </div>
+    </div>
     </div>
 
        

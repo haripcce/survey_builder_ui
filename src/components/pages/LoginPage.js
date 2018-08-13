@@ -11,15 +11,22 @@ class LoginPage extends Component {
 
     render() {
         return (
+            
+       
             <div class="row">
-            <div class="col">
-         
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="standard-padding">
+                        <LoginHeaderForm/>
+                        <LoginForm submit={this.submit} />    
+                     </div>
+               </div>
             </div>
-            <div class="col">
-                    <LoginHeaderForm/>
-                    <LoginForm submit={this.submit} />
-            </div>
-          </div>
+            
+        
+            
         );
     }
 }

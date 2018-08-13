@@ -41,16 +41,16 @@ export class LoginForm extends Component {
     render() {
         const {data,errors} = this.state;
 		return (
-            <div class="row">
-            <div class="col"> 
+<div class ="row"> 
+<div class="col-md-12">
 <form onSubmit={this.onSubmit}>
-    {errors.global && (
-        <div className="alert alert-danger">{errors.global}</div>
-    )}
-    <div class="form-group">
+{errors.global && (
+    <div className="alert alert-danger">{errors.global}</div>
+)}
+<div class="form-group">
         <label for="email">Username</label>
         <input type="text" className={
-              errors.email ? "form-control is-invalid" : "form-control"
+              errors.email ? "form-control error" : "form-control"
             } id="email" placeholder="Enter username"
         value={data.email}
         onChange={this.onChange} />
@@ -59,27 +59,19 @@ export class LoginForm extends Component {
     <div class="form-group">
         <label for="password">Password</label>
         <input type="password" className={
-              errors.password ? "form-control is-invalid" : "form-control"
+              errors.password ? "form-control error" : "form-control"
             } id="password" placeholder="Enter password"
         value={data.password}
         onChange={this.onChange} />
     {errors.password &&  <InlineError text={errors.password}/>}
     </div>
-    <div class="row">
-        <div class="col-2">
-        <button type="submit" class="btn btn-primary">Login</button>
-        </div>
-        <div class="col-2">
-        <button type="button" class="btn btn-secondary">Cancel</button>
-        </div>
-        <div class="col-6">
-        <Link to="/forgotpassword">Forgot Password?</Link>
-        </div>
-    </div>
-</form>  
-         </div>
-         </div>   
-			
+
+    <button type="submit" class="btn btn-primary">Login</button>
+    <button type="button" class="btn btn-secondary">Cancel</button>
+    <Link to="/forgotpassword">Forgot Password?</Link>
+</form>
+</div>    
+</div>     	
 		);
 	}
 }
