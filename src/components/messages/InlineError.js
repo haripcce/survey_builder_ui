@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const  InlineError = ({text}) => {
     return (
-        <div className="invalid-feedback"><span style={{fontSize:'100%'}}>{text}</span></div>
+        <span class="help-block"><span style={{fontSize:'100%'}}>{text}</span></span>
     );
 }
 InlineError.propTypes = {

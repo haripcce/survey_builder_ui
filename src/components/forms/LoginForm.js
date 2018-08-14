@@ -42,35 +42,36 @@ export class LoginForm extends Component {
         const {data,errors} = this.state;
 		return (
 <div class ="row"> 
-<div class="col-md-12">
-<form onSubmit={this.onSubmit}>
-{errors.global && (
-    <div className="alert alert-danger">{errors.global}</div>
-)}
-<div class="form-group">
-        <label for="email">Username</label>
-        <input type="text" className={
-              errors.email ? "form-control error" : "form-control"
-            } id="email" placeholder="Enter username"
-        value={data.email}
-        onChange={this.onChange} />
-        {errors.email &&  <InlineError text={errors.email}/>}
-    </div>
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" className={
-              errors.password ? "form-control error" : "form-control"
-            } id="password" placeholder="Enter password"
-        value={data.password}
-        onChange={this.onChange} />
-    {errors.password &&  <InlineError text={errors.password}/>}
-    </div>
+    <div>
+        <form onSubmit={this.onSubmit}>
+        {errors.global && (
+            <div className="alert alert-danger">{errors.global}</div>
+        )}
+        <div className={
+                    errors.email ? "form-group has-error" : "form-group"
+                    }>
+                <label  for="email">Username</label>
+                <input type="text" class="form-control"  id="email" placeholder="Enter username"
+                value={data.email}
+                onChange={this.onChange} />
+                
+                {errors.email &&  <InlineError text={errors.email}/>}
+        </div>
+        <div class="form-group" className={
+                    errors.password ? "form-group has-error" : "form-group"
+                    }>
+                <label for="password">Password</label>
+                <input type="password" class="form-control"  id="password" placeholder="Enter password"
+                value={data.password}
+                onChange={this.onChange} />
+            {errors.password &&  <InlineError text={errors.password}/>}
+        </div>
 
-    <button type="submit" class="btn btn-primary">Login</button>
-    <button type="button" class="btn btn-secondary">Cancel</button>
-    <Link to="/forgotpassword">Forgot Password?</Link>
-</form>
-</div>    
+            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="button" class="btn btn-secondary">Cancel</button>
+            <Link to="/forgotpassword">Forgot Password?</Link>
+        </form>
+    </div>    
 </div>     	
 		);
 	}
