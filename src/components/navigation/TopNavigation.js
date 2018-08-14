@@ -17,12 +17,33 @@ class TopNavigation extends React.Component {
     const { activeNav } = this.state;
     return (
       <div class="container-fluid">
-      <div class="row" id="nav-header">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-        <a class="navbar-brand" href="/dashboard">Survey Builder</a> 
-      </div>
-      </div>
-      
+        <div class="row" id="nav-header">
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+          <a class="navbar-brand" href="/dashboard">Survey Builder</a> 
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <div id="logoutMenu">
+{/* 
+  <a  onClick={() => this.props.setLocale("en")}>
+      EN
+    </a>{" "}
+    |
+    <a  onClick={() => this.props.setLocale("ru")}>
+      RU
+</a>
+*/} 
+ 
+ 
+
+
+{isAuthenticated && <button onClick={logout}><span class="glyphicon glyphicon-log-out"></span></button>  }
+</div>
+        </div>
+        </div>
+        <div class="row" id="nav-header">
+        
+       
+        </div>
   <div class="row">
     
       <nav class="navbar navbar-default">
