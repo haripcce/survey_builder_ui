@@ -10,7 +10,7 @@ class DashboardPage extends React.Component {
   render() {
     const { isConfirmed, isAuthenticated, logout } = this.props;
     return (
-      <div className="container-fluid">
+      <div className="">
      <TopNavigation />
       </div>
       

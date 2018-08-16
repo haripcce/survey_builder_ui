@@ -60,10 +60,7 @@ body {
   border-radius: 0 0 5px 5px;
 }
 
-#logoutMenu{
-  text-align: right;
-  padding-top: 7%
-}
+
 
 @media (min-width: 768px) {
   .nav-justified {
@@ -124,6 +121,24 @@ body {
     /* z-index: 31; */
   }
 
+  #logoutMenu {
+    float: right;
+    /* text-align: right;
+    padding-top: 7% */
+  }
+
+  .navbar-brand {
+    float: none;
+}
+
+.container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+
+
+
 }
 
 @media (max-width: 767px) {
@@ -139,16 +154,13 @@ body {
 .navbar-brand {
   float: none;
   font-size: 18px;
- 
 }
-#nav-header {
-  text-align: center;
-  padding-bottom:1%;
-}
+
 
 #logoutMenu{
   text-align: right;
-  padding-top: 1%;
+  float: right;
+  /* padding-top: 1%; */
 }
 
 
