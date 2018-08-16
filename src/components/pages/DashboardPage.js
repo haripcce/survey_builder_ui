@@ -1,8 +1,9 @@
+/* eslint-disable react/prefer-stateless-function,no-unused-vars,react/prop-types,jsx-a11y/no-static-element-interactions */
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { userLoggingOut } from "../../actions/auth";
 import { FormattedMessage } from "react-intl";
+import { userLoggingOut } from "../../actions/auth";
 import { setLocale } from "../../actions/locale";
 
 class DashboardPage extends React.Component {
@@ -10,7 +11,7 @@ class DashboardPage extends React.Component {
     const { isConfirmed, isAuthenticated, logout } = this.props;
     return (
       <div className="container-fluid">
-      <a  onClick={() => this.props.setLocale("en")}>
+      <a onClick={() => this.props.setLocale("en")}>
               EN
             </a>{" "}
             |

@@ -14,7 +14,7 @@ export function* userLoginSaga(action) {
   }
 }
 
-export function* userLogoutSaga(action) {
+export function* userLogoutSaga() {
       localStorage.removeItem("bookwormJWT");
       yield put(userLoggedOut());
       history.push("/");
