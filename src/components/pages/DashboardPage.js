@@ -5,24 +5,15 @@ import { connect } from "react-redux";
 import { FormattedMessage } from "react-intl";
 import { userLoggingOut } from "../../actions/auth";
 import { setLocale } from "../../actions/locale";
+import TopNavigation from "../navigation/TopNavigation";
+import "../../scss/navbar.scss";
 
 class DashboardPage extends React.Component {
   render() {
     const { isConfirmed, isAuthenticated, logout } = this.props;
     return (
       <div className="container-fluid">
-      <a onClick={() => this.props.setLocale("en")}>
-              EN
-            </a>{" "}
-            |
-            <a  onClick={() => this.props.setLocale("ru")}>
-              RU
-            </a>
-        <h1><FormattedMessage
-                  id="nav.dashboard"
-                  defaultMessage="Dashboard"
-                /></h1>
-        {isAuthenticated && <button onClick={logout}>Logout</button>  }
+          <TopNavigation />
       </div>
     );
   }
