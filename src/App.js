@@ -12,12 +12,17 @@ import GuestRoute from './routes/GuestRoute';
 import UserRoute from './routes/UserRoute';
 import messages from "./messages";
 import "./scss/index.scss";
+import TopNavigation from "./components/navigation/TopNavigation";
+import reportsPage from "./components/reports/reportsPage";
+import surveysPage from "./components/surveys/surveys";
 
 class App extends React.Component {
 
 render(){
-	const { location, lang } = this.props;
+	const { location, lang, isAuthenticated } = this.props;
 return (
+	<div>
+		{ isAuthenticated ? <TopNavigation/>: '' }
 <IntlProvider locale={lang} messages={messages[lang]}>
 <div className="container-fluid">
 		<GuestRoute path="/" location={location} exact component={HomePage} />
@@ -25,9 +30,11 @@ return (
 		<GuestRoute path="/signup" location={location} exact component={SignUpPage} />
 		<GuestRoute path="/forgotpassword" location={location} exact component={ForgotPasswordPage} />
 		<UserRoute path="/dashboard" location={location} exact component={DashboardPage} />
+		<UserRoute path="/reports" location={location} exact component={reportsPage} />
+		<UserRoute path="/surveys" location={location} exact component={surveysPage} />
 	</div>
 	</IntlProvider>
-	);
+	</div>);
 }
 }
 
@@ -35,11 +42,13 @@ App.propTypes = {
 	location: PropTypes.shape({
 	  pathname: PropTypes.string.isRequired
 	}).isRequired,
-	lang: PropTypes.string.isRequired
+	lang: PropTypes.string.isRequired,
+    isAuthenticated: PropTypes.bool.isRequired
   };
   function mapStateToProps(state) {
 	return {
-	  lang: state.locale.lang
+	  lang: state.locale.lang,
+	  isAuthenticated: !!state.user.token
 	};
   }
   export default connect(mapStateToProps, {  })(App);

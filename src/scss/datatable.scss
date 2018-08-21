@@ -1,0 +1,22 @@
+.table-sarve {
+  margin-top: 20px;
+}
+.sarvey-search {
+  float: right;
+  padding: 15px;
+  border-bottom: 1px solid #dbd8d8;
+  display: none;
+  > input {
+    width: 30%;
+  }
+}
+.sarve-btn {
+  padding: 15px;
+  border-bottom: 1px solid #dbd8d8;
+}
+.no-padding {
+  padding: 0px !important;
+}
+.no-margin-right {
+  margin-right: 0 !important;
+}

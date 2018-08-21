@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {userLoggingOut} from "../../actions/auth";
 import {setLocale} from "../../actions/locale";
+import history from "../../history";
 
 class TopNavigation extends React.Component {
     state = {
@@ -11,6 +12,7 @@ class TopNavigation extends React.Component {
 
     onNavClick(nav) {
         this.setState({activeNav: nav});
+        history.push(`/${nav}`);
     }
 
     render() {
@@ -21,14 +23,10 @@ class TopNavigation extends React.Component {
                 <div className="row" id="nav-header">
                     <div className="col-xs-12">
                         <h1 className="navbar-brand text-center" href="/dashboard">SURVEY BUILDER</h1>
-                        <span id="logoutMenu">
-              {
-                  isAuthenticated &&
-                  <button onClick={logout}>
-                      <span className="glyphicon glyphicon-log-out"/>
-                  </button>
-              }
-          </span>
+                        <span id="logoutMenu"> {
+                            isAuthenticated &&
+                        <button onClick={logout}> <span className="glyphicon glyphicon-log-out"/></button>
+                        } </span>
                     </div>
                 </div>
                 <div className="row">
@@ -62,56 +60,6 @@ class TopNavigation extends React.Component {
                                 </li>
                             </ul>
                         </div>
-                        <div className="container-fluid">
-                            <div className="col-xs-12 col-md-12 col-lg-12">
-                                <div className={activeNav === 'dashboard' ? "active" : "hidden"}>
-                                    <div className="row">
-                                        <div className="col-xs-12 col-md-12 col-lg-12 tab-pan-padding">
-                                            <div className="col-xs-4 col-lg-4 col-md-4 text-center">
-                                                <a>
-                                                    Manage User
-                                                </a>
-                                            </div>
-                                            <div className="col-xs-4 col-lg-4 col-md-4 text-center">
-                                                <a>
-                                                    Recent Survey
-                                                </a>
-                                            </div>
-                                            <div className="col-xs-4 col-lg-4 col-md-4 text-center">
-                                                <a>
-                                                    Open Surveys
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div className="col-xs-12 col-md-12 col-lg-12 tab-pan-padding">
-                                            <div className="col-xs-4 col-lg-4 col-md-4 text-center">
-                                                <a>
-                                                    Manage Emails
-                                                </a>
-                                            </div>
-                                            <div className="col-xs-4 col-lg-4 col-md-4 text-center">
-                                                <a>
-                                                    Survey Templates
-                                                </a>
-                                            </div>
-                                            <div className="col-xs-4 col-lg-4 col-md-4 text-center">
-                                                <a>
-                                                    Question Bank
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div className={activeNav === 'surveys' ? "active" : "hidden"}>
-                                    Survey Container
-                                </div>
-                                <div className={activeNav === 'reports' ? "active" : "hidden"}>
-                                   Report Container
-                                </div>
-                            </div>
-                        </div>
-
                     </nav>
 
                 </div>

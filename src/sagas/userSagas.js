@@ -8,12 +8,12 @@ export function* userLoginSaga() {
   try {
     /* action */
     /* yield call(api.user.login, action.user); */
-    const user =  {token:'hfjdsfkfj', email:'abhijit@synerzip.com'};
+    const user =  {token:'hfjdsfkfj', user:'abhijit@synerzip.com'};
     localStorage.bookwormJWT = user.token;
     yield put(userLoggedIn(user));
     history.push("/");
   } catch (err) {
-    yield put(userLoginFailure({errors: 'failed to login'}));
+    yield put(userLoginFailure({error: 'failed to login'}));
   }
 }
 
