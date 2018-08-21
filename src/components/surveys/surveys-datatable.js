@@ -9,9 +9,15 @@ import { connect } from "react-redux";
 import { userLoggingOut } from "../../actions/auth";
 import { setLocale } from "../../actions/locale";
 import "../../scss/datatable.scss";
+import history from "../../history";
 
 
 class SurveysTable extends React.Component {
+
+    onCreateNewSurveyClick = (nav)  => {
+        history.push(`/${nav}`);
+    };
+
     render() {
         const { isConfirmed, isAuthenticated, logout } = this.props;
         const products = [{
@@ -44,7 +50,7 @@ class SurveysTable extends React.Component {
                 </div>
                 <div className="row">
                     <div className="col-xs-12 col-md-12 col-lg-12 sarve-btn text-right">
-                        <button className="btn btn-default"> Create New Surve</button>
+                        <button className="btn btn-default" onClick={() => this.onCreateNewSurveyClick('create-survey')}> Create New Surve</button>
                         <button className="btn btn-default no-margin-right"> Survey Template</button>
                     </div>
                 </div>

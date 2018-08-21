@@ -12,9 +12,11 @@ import GuestRoute from './routes/GuestRoute';
 import UserRoute from './routes/UserRoute';
 import messages from "./messages";
 import "./scss/index.scss";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import TopNavigation from "./components/navigation/TopNavigation";
 import reportsPage from "./components/reports/reportsPage";
 import surveysPage from "./components/surveys/surveys";
+import CreateNewSurvey from "./components/surveys/CreateNewSurvey";
 
 class App extends React.Component {
 
@@ -32,6 +34,7 @@ return (
 		<UserRoute path="/dashboard" location={location} exact component={DashboardPage} />
 		<UserRoute path="/reports" location={location} exact component={reportsPage} />
 		<UserRoute path="/surveys" location={location} exact component={surveysPage} />
+		<UserRoute path="/create-survey" location={location} exact component={CreateNewSurvey} />
 	</div>
 	</IntlProvider>
 	</div>);
