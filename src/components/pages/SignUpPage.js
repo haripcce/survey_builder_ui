@@ -1,12 +1,10 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 
-const SignUpPage = () => {
-    return (
+const SignUpPage = () =>(
         <div >
         <h1>Sign Up Page</h1>
         </div>
     );
-};
 
 export default SignUpPage;

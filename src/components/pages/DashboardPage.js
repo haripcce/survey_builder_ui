@@ -1,27 +1,53 @@
+/* eslint-disable react/prefer-stateless-function,no-unused-vars,react/prop-types,jsx-a11y/no-static-element-interactions */
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { userLoggingOut } from "../../actions/auth";
-import { FormattedMessage } from "react-intl";
 import { setLocale } from "../../actions/locale";
+import "../../scss/navbar.scss";
 
 class DashboardPage extends React.Component {
   render() {
     const { isConfirmed, isAuthenticated, logout } = this.props;
     return (
       <div className="container-fluid">
-      <a  onClick={() => this.props.setLocale("en")}>
-              EN
-            </a>{" "}
-            |
-            <a  onClick={() => this.props.setLocale("ru")}>
-              RU
-            </a>
-        <h1><FormattedMessage
-                  id="nav.dashboard"
-                  defaultMessage="Dashboard"
-                /></h1>
-        {isAuthenticated && <button onClick={logout}>Logout</button>  }
+        <div className="row">
+          <div className="col-xs-12 col-md-12 col-lg-12 tab-pan-padding">
+            <div className="col-xs-4 col-lg-4 col-md-4 text-center">
+              <a>
+                Manage User
+              </a>
+            </div>
+            <div className="col-xs-4 col-lg-4 col-md-4 text-center">
+              <a>
+                Recent Survey
+              </a>
+            </div>
+            <div className="col-xs-4 col-lg-4 col-md-4 text-center">
+              <a>
+                Open Surveys
+              </a>
+            </div>
+          </div>
+          <div className="col-xs-12 col-md-12 col-lg-12 tab-pan-padding">
+            <div className="col-xs-4 col-lg-4 col-md-4 text-center">
+              <a>
+                Manage Emails
+              </a>
+            </div>
+            <div className="col-xs-4 col-lg-4 col-md-4 text-center">
+              <a>
+                Survey Templates
+              </a>
+            </div>
+            <div className="col-xs-4 col-lg-4 col-md-4 text-center">
+              <a>
+                Question Bank
+              </a>
+            </div>
+          </div>
+
+        </div>
       </div>
     );
   }
